@@ -8,6 +8,12 @@ class RecipeTest < Minitest::Test
     assert_equal "Cheese Pizza", r.name
   end
 
+  def test_ingredients_starts_as_an_empty_hash
+    r = Recipe.new("Cheese Pizza")
+
+    assert_equal ({}), r.ingredients
+  end
+
   def test_it_can_add_an_ingredient
     r = Recipe.new("Cheese Pizza")
     r.add_ingredient("Flour", 500) # 500 "UNIVERSAL UNITS"
